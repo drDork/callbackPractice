@@ -77,3 +77,60 @@ function eliminateDuplicates(arr) {
 
 eliminateDuplicates(names);
 
+
+
+
+var myArrObj = [
+{name: 'ryan'
+id: 17, 
+color: 'white'},
+
+{name: 'bob'
+id: 18, 
+color: 'black'}
+];
+
+myArrObj[1].color
+
+
+var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+names.sort();
+
+names[3].push();
+
+
+var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan', 'Ryan', 'Bart', 'Bart'];
+
+var butts = function(names){
+	names.sort();
+	for(var i = 0; i < names.length; i++){
+		if(names[i] === names[i + 1]){
+			console.log('they are the same');
+		}
+	}
+}
+
+
+var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan', 'Ryan', 'Bart', 'Bart'];
+
+var butts = function(names){
+	names.sort();
+	for(var i = 0; i < names.length; i++){
+		if(names[i] === names[i + 1]){
+			names.splice(i, 1); 
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

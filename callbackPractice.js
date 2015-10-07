@@ -113,23 +113,16 @@ contains(names, 'Colt', function(result){
 
 
 function uniq(arr, cb){
-    var i,
-      len=arr.length,
-      out=[],
-      obj={};
+  arr.sort();
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] === arr[i + 1]) {
+      arr.splice(i, 1);
+    }
 
-  for (i=0;i<len;i++) {
-    obj[arr[i]]=0;
-  }
-  for (i in obj) {
-    out.push(i);
-  }
-  return out;
+  };
+ cb(arr);
 }
 
-
-cb(arr);
-}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 uniq(names, function(uniqArr){
