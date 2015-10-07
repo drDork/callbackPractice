@@ -24,7 +24,10 @@ and what you should write is the favNum function that makes the code above work,
 
 
 
-  //Code Here for first
+function first(arr, cb){
+  var firstNameInArray = arr[0]
+  cb(firstNameInArray);
+}
   
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
@@ -33,12 +36,16 @@ first(names, function(firstName){
 
 
 
+
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
 
 
-  //Code Here for last
+function last(arr, cb){
+  var lastNameInArray = arr[(arr.length - 1)]; 
+  cb(lastNameInArray); 
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 last(names, function(lastName){
@@ -56,7 +63,9 @@ last(names, function(lastName){
 
 
 
-  //Code Here for multiply
+function multiply(num1, num2, cb){ 
+  cb(num1 * num2);
+}
 
 multiply(4, 3, function(answer){
   console.log('The answer is ', answer); //should console.log 12
@@ -72,7 +81,18 @@ multiply(4, 3, function(answer){
 
 
 
-  //Code Here for contains
+function contains(arr, string, cb){
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] === string){
+      var resultContainer = true; 
+      break;
+    } else { resultContainer = false;}
+  }
+  cb(resultContainer);
+}
+  
+
+
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 contains(names, 'Colt', function(result){
@@ -92,7 +112,24 @@ contains(names, 'Colt', function(result){
 
 
 
-    //Code Here for uniq
+function uniq(arr, cb){
+    var i,
+      len=arr.length,
+      out=[],
+      obj={};
+
+  for (i=0;i<len;i++) {
+    obj[arr[i]]=0;
+  }
+  for (i in obj) {
+    out.push(i);
+  }
+  return out;
+}
+
+
+cb(arr);
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 uniq(names, function(uniqArr){
@@ -108,9 +145,15 @@ uniq(names, function(uniqArr){
 
 
 
-    //Code Here for each
+function each(arr, cb){
+  for(var i = 0; i < arr.length; i++){
+    var item = arr[i];
+    var indice = i; 
+    cb(item, indice);
+  }
+}
 
-var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+var names = ['Fuck Me', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'FUCK'];
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
 });
@@ -125,7 +168,15 @@ each(names, function(item, indice){
 
 
 
- //code here for getUserById
+function getUserById(arr, key, cb){
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i].id === key){
+    var user = arr[i]; 
+    } 
+  }
+
+  cb(user);
+}
 
 var users = [
   {
